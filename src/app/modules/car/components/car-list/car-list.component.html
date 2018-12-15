@@ -1,6 +1,18 @@
-<div class="card" *ngFor="let car of carList" style="width: 18rem;">
-  <img class="card-img-top" *ngIf="car.carImg" [src]="car.carImg" alt="Card image cap">
-  <div class="card-body">
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+<div class="container">
+  <div class="column">
+    <form class="row form-container" *ngIf="searchText">
+      <div class="form-group col">
+        <select class="form-control" placeholder="Search car by brand" [(ngModel)]="searchText" name="searchText">
+          <option value="All">All</option>
+          <option *ngFor="let brand of brands" [value]="brand">{{brand}}</option>
+        </select>
+      </div>
+      <div class="col">
+        <button type="button" class="btn btn-primary" (click)="searchCarByBrand(searchText)">Search</button>
+      </div>
+    </form>
+    <div class="row">
+      <app-car-card *ngFor="let car of carList" [car]="car"></app-car-card>
+    </div>
   </div>
 </div>

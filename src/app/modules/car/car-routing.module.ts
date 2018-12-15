@@ -9,9 +9,8 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'browse', pathMatch: 'full' },
       { path: 'browse', component: CarListComponent },
-    //   { path: 'browse/:id', component: PackageDetailComponent },
-    //   { path: 'cart', component: PackageCartComponent },
-    //   { path: 'wishList', component: PackageWishListComponent }
+      { path: 'browse/:id', component: CarListComponent },
+      { path: 'compare', component: CarListComponent }
     ]
   }
 ];
