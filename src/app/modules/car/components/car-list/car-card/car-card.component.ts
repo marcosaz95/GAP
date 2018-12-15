@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit, Input } from '@angular/core';
 import { ICar } from 'src/app/models/interfaces/car.interface';
 
@@ -10,9 +11,13 @@ export class CarCardComponent implements OnInit {
 
   @Input() car: ICar;
 
-  constructor() { }
+  constructor(private _router: Router) { }
 
   ngOnInit() {
+  }
+
+  redirectToDetail() {
+    this._router.navigate(['list', this.car.id]);
   }
 
 }

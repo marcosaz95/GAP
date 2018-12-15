@@ -1,14 +1,22 @@
-<div class="card car-container">
+<div class="card car-container" (click)="redirectToDetail()">
   <img class="card-img-top" *ngIf="car.carImg" [src]="car.carImg" alt="Card image cap">
   <div class="card-body">
     <div class="container">
       <div class="row">
-        <label class="col-5">{{car.model}}</label>
-        <label class="col-7">{{car.brand}}</label>
+        <strong class="col-5">Model:</strong>
+        <label>{{car.model}}</label>
       </div>
       <div class="row">
-        <label class="col-5">{{car.year}}</label>
-        <label class="col-7">{{car.price | currency}}</label>
+        <strong class="col-5">Brand:</strong>
+        <label>{{car.brand}}</label>
+      </div>
+      <div class="row">
+        <strong class="col-5">Price:</strong>
+        <label>{{car.price | currency}}</label>
+      </div>
+      <div class="row">
+        <strong class="col-5">Year:</strong>
+        <label>{{car.year}}</label>
       </div>
     </div>
   </div>

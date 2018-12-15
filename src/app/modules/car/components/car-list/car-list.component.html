@@ -1,17 +1,18 @@
 <div class="container">
   <div class="column">
-    <form class="row form-container" *ngIf="searchText">
-      <div class="form-group col">
-        <select class="form-control" placeholder="Search car by brand" [(ngModel)]="searchText" name="searchText">
+    <form class="row form-container justify-content-center" *ngIf="searchText">
+      <div class="form-group col-6">
+        <label for="searchText">Search Car by Brand</label>
+        <select class="form-control" id="searchText" [(ngModel)]="searchText" name="searchText">
           <option value="All">All</option>
           <option *ngFor="let brand of brands" [value]="brand">{{brand}}</option>
         </select>
       </div>
-      <div class="col">
+      <div class="padding-top-30">
         <button type="button" class="btn btn-primary" (click)="searchCarByBrand(searchText)">Search</button>
       </div>
     </form>
-    <div class="row">
+    <div class="row margin-0 justify-content-center">
       <app-car-card *ngFor="let car of carList" [car]="car"></app-car-card>
     </div>
   </div>

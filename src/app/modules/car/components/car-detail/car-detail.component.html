@@ -1,3 +1,35 @@
-<p>
-  car-detail works!
-</p>
+<div class="row justify-content-center margin-0 padding-top-30" *ngIf="car">
+  <div class="card detail-container col-6 col-md-6 col-sm-10 padding-0">
+    <img class="card-img-top" *ngIf="car.carImg" [src]="car.carImg" alt="Card image cap">
+    <div class="card-body">
+      <div class="container">
+        <div class="row">
+          <strong class="col-2">Name:</strong>
+          <label class="col-10">{{car.fullName}}</label>
+        </div>
+        <div class="row">
+          <strong class="col-2">Model:</strong>
+          <label class="col-4">{{car.model}}</label>
+          <strong class="col-3">Brand:</strong>
+          <label class="col-3">{{car.brand}}</label>
+        </div>
+        <div class="row">
+          <strong class="col-2">Price:</strong>
+          <label class="col-4">{{car.price | currency}}</label>
+          <strong class="col-3">Year:</strong>
+          <label class="col-3">{{car.year}}</label>
+        </div>
+        <div class="row">
+          <strong class="col-2">Body:</strong>
+          <label class="col-4">{{car.body}}</label>
+          <strong class="col-3">Number of doors:</strong>
+          <label class="col-3">{{car.numDoors}}</label>
+        </div>
+        <div class="row">
+          <strong class="col-2">Engine:</strong>
+          <label class="col-10">{{car.engine}}</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

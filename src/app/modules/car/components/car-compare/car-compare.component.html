@@ -1,0 +1,32 @@
+<div class="container padding-top-30" *ngIf="carsForm">
+  <label class="error-message" *ngIf="carsForm.getError('isCarDuplicated')">Please select different cars to compare!</label>
+  <form class="row form-container justify-content-center" [formGroup]="carsForm">
+    <div class="form-group col-md-3 col-sm-12">
+      <label for="firstCar">Select the first car</label>
+      <select class="form-control" id="firstCar" name="firstCar" formControlName="firstCar">
+        <option value="null">Select a car</option>
+        <option *ngFor="let car of cars" [ngValue]="car">{{car.fullName}}</option>
+      </select>
+    </div>
+    <div class="form-group col-md-3 col-sm-12">
+      <label for="secondCar">Select the second car</label>
+      <select class="form-control" id="secondCar" name="secondCar" formControlName="secondCar">
+        <option value="null">Select a car</option>
+        <option *ngFor="let car of cars" [ngValue]="car">{{car.fullName}}</option>
+      </select>
+    </div>
+    <div class="form-group col-md-3 col-sm-12">
+      <label for="thirdCar">Select the third car</label>
+      <select class="form-control" id="thirdCar" name="thirdCar" formControlName="thirdCar">
+        <option value="null">Select a car</option>
+        <option *ngFor="let car of cars" [ngValue]="car">{{car.fullName}}</option>
+      </select>
+    </div>
+    <div class="padding-top-30 col-md-3 col-sm-12 row justify-content-center btn-container">
+      <button type="button" class="btn btn-primary" (click)="compareCars()" [disabled]="carsForm.invalid || !isSelectedTwoCars()">Compare</button>
+    </div>
+  </form>
+</div>
+<div *ngIf="carsToShow && carsToShow.length">
+  <app-car-detail *ngFor="let car of carsToShow" [car]="car"></app-car-detail>
+</div>

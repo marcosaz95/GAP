@@ -1,5 +1,6 @@
 .car-container {
-    width: 300px;
+    cursor: pointer;
+    width: 322px;
     margin: 24px;
 }
 .car-container img {

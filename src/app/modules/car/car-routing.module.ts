@@ -1,3 +1,5 @@
+import { CarDetailComponent } from './components/car-detail/car-detail.component';
+import { CarCompareComponent } from './components/car-compare/car-compare.component';
 import { CarMainComponent } from './components/car-main/car-main.component';
 import { CarListComponent } from './components/car-list/car-list.component';
 import { NgModule } from '@angular/core';
@@ -7,10 +9,11 @@ const routes: Routes = [
   {
     path: '', component: CarMainComponent,
     children: [
-      { path: '', redirectTo: 'browse', pathMatch: 'full' },
-      { path: 'browse', component: CarListComponent },
-      { path: 'browse/:id', component: CarListComponent },
-      { path: 'compare', component: CarListComponent }
+      // { path: '**', redirectTo: 'list' },
+      { path: '', redirectTo: 'list', pathMatch: 'full' },
+      { path: 'list', component: CarListComponent },
+      { path: 'list/:id', component: CarDetailComponent },
+      { path: 'compare', component: CarCompareComponent }
     ]
   }
 ];

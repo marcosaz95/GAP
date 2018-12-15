@@ -13,6 +13,10 @@ export class Car {
         return this._carService.getCars();
     }
 
+    getCarById(id: string): ICar {
+        return this._carList.find(car => car.id.toString() === id);
+    }
+
     set carList(carList: ICar[]) {
         this._carList = carList;
     }
