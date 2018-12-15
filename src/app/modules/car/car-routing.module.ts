@@ -9,7 +9,6 @@ const routes: Routes = [
   {
     path: '', component: CarMainComponent,
     children: [
-      // { path: '**', redirectTo: 'list' },
       { path: '', redirectTo: 'list', pathMatch: 'full' },
       { path: 'list', component: CarListComponent },
       { path: 'list/:id', component: CarDetailComponent },

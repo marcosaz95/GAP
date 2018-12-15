@@ -1,10 +1,9 @@
 import { GapValidator } from './../../../../common/validators';
-import { carSelection } from './../../../../common/constants';
-import { Component, OnInit, SimpleChange } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ICar } from 'src/app/models/interfaces/car.interface';
 import { Car } from 'src/app/models/classes/car';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-car-compare',

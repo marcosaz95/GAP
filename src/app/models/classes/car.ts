@@ -1,6 +1,6 @@
 import { CarService } from './../services/car.service';
 import { Injectable } from "@angular/core";
-import { Observable, of } from "rxjs";
+import { Observable } from "rxjs";
 import { ICar } from '../interfaces/car.interface';
 
 @Injectable()
