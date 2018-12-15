@@ -1,5 +1,6 @@
 .error-message {
     color: red;
+    padding-left: 15px;
 }
 .btn-container {
     height: 70px;
